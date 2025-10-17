@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F4E3;
+            color: #3C2F2F;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+
+        .left-panel {
+            flex: 1;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Keeps logo and nav spaced */
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav {
+            display: flex;
+            margin-left: auto; /* Pushes nav to the right, away from logo */
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #3C2F2F;
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .nav a:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background-color: #E2B270;
+        }
+
+        .hero-section {
+            margin-top: 50px;
+            max-width: 600px;
+        }
+
+        .hero-section h1 {
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center; /* Vertically aligns the bee with text */
+            justify-content: center; /* This will center the entire h1 content */
+            /* Remove 'margin-left: 15px;' from the image if it exists in a separate rule */
+        }
+
+
+        .hero-section h1 img {
+            height: 80px;
+            margin-left: -10px;
+        }
+
+        .hero-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            text-align: center; 
+            margin-top: 0;
+            color: #5A4B4B;
+        }
+
+        .hero-section p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .learn-more {
+            background-color: #E2B270;
+            color: #3C2F2F;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .learn-more img {
+            height: 25px;
+            margin-left: 10px;
+        }
+
+        .right-panel {
+            flex: 1;
+            position: relative; /* Essential for positioning children absolutely */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .right-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('books2.jpg');
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(25% 0%, 150% 0%, 150% 100%, 0% 100%);
+            z-index: 1;
+        }
+
+        /* Styling for the login button now inside right-panel */
+        .login-btn-right {
+            position: absolute;
+            top: 40px; /* Adjust as needed */
+            left: 70%; /* Adjust to move it further left or right within the clipped area */
+            background-color: #E2B270;
+            color: #3C2F2F;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            z-index: 2; /* Ensures it's above the background image */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .left-panel {
+                padding: 30px 40px;
+            }
+            .hero-section h1 {
+                font-size: 50px;
+            }
+            .hero-section h2 {
+                font-size: 24px;
+            }
+            .hero-section p {
+                font-size: 16px;
+            }
+            .nav a {
+                margin-left: 20px;
+                font-size: 16px;
+            }
+            .login-btn-right {
+                top: 30px;
+                left: 8%; /* Adjust for smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-panel {
+                padding: 30px 20px;
+                text-align: center;
+            }
+            .header {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+            .nav {
+                margin-top: 20px;
+                margin-left: 0; /* Center nav items */
+                justify-content: center;
+            }
+            .nav a {
+                margin: 0 10px;
+            }
+            .logo {
+                margin-bottom: 20px;
+            }
+            /* Adjust login button for mobile layout, perhaps moving it back to header or centering */
+            .login-btn-right {
+                position: static; /* Remove absolute positioning */
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block; /* Make it a block element to center */
+                width: fit-content;
+                order: 4; /* Puts it at the bottom in a flex column */
+            }
+            .right-panel {
+                height: 50vh;
+                width: 100%;
+            }
+            .right-panel::before {
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Remove diagonal clip for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 40px;
+            }
+            .logo span {
+                font-size: 20px;
+            }
+            .nav a {
+                font-size: 14px;
+                margin: 0 8px;
+            }
+            .login-btn-right { /* Adjusted for very small screens */
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            .hero-section h1 {
+                font-size: 32px;
+            }
+            .hero-section h1 img {
+                height: 40px;
+                margin-left: 10px;
+            }
+            .hero-section h2 {
+                font-size: 18px;
+            }
+            .hero-section p {
+                font-size: 14px;
+            }
+            .learn-more {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="header">
+                <div class="logo">
+                    <img src="bookhive logo.png" alt="BookHive Logo">
+                    <span>BookHive</span>
+                </div>
+                <div class="nav">
+                    <a href="#">Home</a>
+                    <a href="#">About US</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+
+            <div class="hero-section">
+                <h1>BookHive <img src="cute bee.png" alt="Bee icon"></h1>
+                <h2>"Your Hive of Knowledge and Discovery"</h2>
+                <p>BookHive is a Library Inventory System that helps librarians efficiently manage their collection of books and borrowing records.</p>
+                <p>Designed for simplicity and accuracy, BookHive provides full control over book records and transactions—making library work more organized and less time-consuming.</p>
+                <p>With a clean interface and practical features, it ensures every book is properly tracked, borrowed, and returned with ease.</p>
+                <a href="#" class="learn-more">Learn more <img src="arrow.png" alt="Arrow icon"></a>
+            </div>
+        </div>
+        <div class="right-panel">
+            <a href="#" class="login-btn-right">Log in</a> 
+            <!-- The bookshelf image will be set as a background with clip-path -->
+        </div>
+    </div>
+</body>
+</html>
