@@ -21,11 +21,10 @@
             display: flex;
             height: 100vh;
             position: relative;
-            transition: opacity 0.8s ease, transform 0.8s ease; /* Added for fade animation */
+            transition: opacity 0.8s ease, transform 0.8s ease;
             opacity: 1;
         }
 
-        /* When fading out */
         .container.fade-out {
             opacity: 0;
             transform: translateY(-50px);
@@ -65,7 +64,8 @@
 
         .nav {
             display: flex;
-            margin-left: auto;
+            margin-left: 0px;
+            margin-right: 150px;
         }
 
         .nav a {
@@ -111,7 +111,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-style: italic;
-            text-align: center; 
+            text-align: center;
             margin-top: 0;
             color: #5A4B4B;
         }
@@ -156,7 +156,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image:linear-gradient(to bottom, transparent 70%, #F8F4E3 100%), url('books2.jpg');
+            background-image: linear-gradient(to bottom, transparent 90%, #F8F4E3 100%), url('books2.jpg');
             background-size: cover;
             background-position: center;
             clip-path: polygon(25% 0%, 150% 0%, 150% 100%, 0% 100%);
@@ -177,8 +177,8 @@
             z-index: 2;
         }
 
-        /* --- About Us Section Styles --- */
-        .about-us-section {
+        /* --- About Section Styles --- */
+        .about-section {
             background-image: url('About-bg.png');
             background-size: cover;
             background-position: center;
@@ -192,7 +192,7 @@
         }
         
         @media (min-width: 1360px) and (max-width: 1370px) and (min-height: 760px) and (max-height: 770px) {
-            .about-us-section {
+            .about-section {
                 width: 100vw;
                 height: 100vh;
                 padding: 0;
@@ -200,24 +200,24 @@
                 align-items: center;
                 justify-content: center;
             }
-            .about-us-content {
+            .about-content {
                 padding: 20px;
             }
         }
 
-        .about-us-content {
+        .about-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 10;
         }
 
-        .about-us-header {
+        .about-header {
             margin-bottom: 60px;
             position: relative;
         }
 
-        .about-us-header img.book-loop {
+        .about-header img.book-loop {
             height: 200px;
             position: absolute;
             left: 2%; 
@@ -225,7 +225,7 @@
             transform: translateY(-50%);
         }
 
-        .about-us-header h2 {
+        .about-header h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 48px;
             font-weight: 700;
@@ -237,7 +237,7 @@
             z-index: 1;
         }
 
-        .about-us-header p {
+        .about-header p {
             font-size: 16px;
             color: #5A4B4B;
             max-width: 700px;
@@ -290,7 +290,7 @@
             margin: 0;
         }
 
-        .about-us-footer-text {
+        .about-footer-text {
             font-size: 17px;
             color: #5A4B4B;
             margin-top: 60px;
@@ -299,8 +299,6 @@
             margin-right: auto;
             line-height: 1.6;
         }
-
-        /* Responsive styles below omitted for brevity (same as your original) */
     </style>
 </head>
 <body>
@@ -313,7 +311,7 @@
                 </div>
                 <div class="nav">
                     <a href="#">Home</a>
-                    <a href="#about-us">About US</a>
+                    <a href="#about">About</a>
                     <a href="#">Contact</a>
                 </div>
             </div>
@@ -324,7 +322,7 @@
                 <p>BookHive is your digital hive of knowledge — a smart and organized space where every book finds its perfect place.</p>
                 <p>Built for simplicity and precision, it empowers librarians to manage collections, track borrowings, and maintain records with ease.</p>
                 <p>With its sleek interface and intuitive tools, BookHive transforms library management into a seamless experience — saving time, reducing errors, and keeping shelves and systems perfectly in sync.</p>
-                <a href="#about-us" class="learn-more">Learn more <img src="arrow.png" alt="Arrow icon"></a>
+                <a href="#about" class="learn-more">Learn more <img src="arrow.png" alt="Arrow icon"></a>
             </div>
         </div>
         <div class="right-panel">
@@ -332,10 +330,10 @@
         </div>
     </div>
 
-    <!-- About Us Section -->
-    <div class="about-us-section" id="about-us">
-        <div class="about-us-content">
-            <div class="about-us-header">
+    <!-- About Section -->
+    <div class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-header">
                 <img src="book-vid.gif" alt="Book gif" class="book-loop">
                 <h2>About BookHive</h2>
                 <p>The BookHive Library Inventory System is a database-driven application built to assist librarians in organizing and maintaining book collections. Since the system has only one user—the librarian—it prioritizes ease of use, precision, and complete control over book records.</p>
@@ -352,7 +350,7 @@
                 </div>
                 <div class="feature-box">
                     <h3>Borrowing Management:</h3>
-                    <p>Record and monitor who borrowed books, along with with Date Borrowed and Due Date.</p>
+                    <p>Record and monitor who borrowed books, along with Date Borrowed and Due Date.</p>
                 </div>
                 <div class="feature-box">
                     <h3>Return Updates:</h3>
@@ -360,20 +358,19 @@
                 </div>
             </div>
 
-            <p class="about-us-footer-text">
+            <p class="about-footer-text">
                 BookHive simplifies library management by reducing manual record-keeping, improving accuracy, and ensuring a well-maintained inventory for every librarian.
             </p>
         </div>
     </div>
 
-    <!-- Fade Script -->
     <script>
         const homepage = document.querySelector('.container');
 
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
-            const fadeStart = 100; // when fading starts
-            const fadeEnd = window.innerHeight / 1.5; // when fully faded
+            const fadeStart = 100;
+            const fadeEnd = window.innerHeight / 1.5;
 
             if (scrollY > fadeStart) {
                 homepage.style.opacity = Math.max(1 - (scrollY - fadeStart) / fadeEnd, 0);
