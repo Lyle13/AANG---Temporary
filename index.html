@@ -299,6 +299,289 @@
             margin-right: auto;
             line-height: 1.6;
         }
+        
+        /*Contact Css*/
+
+          #contact {
+            width: 100%;
+            background: linear-gradient(135deg, #F4E6C2 0%, #F8F4E3 100%);
+            padding: 100px 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .contact-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-style: italic;
+            color: #3C2F2F;
+            margin-bottom: 20px;
+        }
+
+        .contact-header p {
+            font-size: 18px;
+            color: #5A4B4B;
+            line-height: 1.6;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .contact-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #3C2F2F;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 16px;
+            border: 2px solid #E2B270;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #3C2F2F;
+            background-color: #FFFBF0;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D4A574;
+            background-color: #FFFEF8;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background-color: #E2B270;
+            color: #3C2F2F;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #D4A574;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(226, 178, 112, 0.3);
+        }
+
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #E2B270;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #3C2F2F;
+        }
+
+        .info-content p {
+            font-size: 16px;
+            color: #5A4B4B;
+            line-height: 1.5;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #3C2F2F;
+            color: #F8F4E3;
+            padding: 50px 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #E2B270;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #F8F4E3;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #E2B270;
+            transition: color 0.3s ease;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        .footer-logo span {
+            font-size: 20px;
+            font-weight: 700;
+            color: #E2B270;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #E2B270;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3C2F2F;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #D4A574;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #5A4B4B;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #A89898;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 40px;
+            }
+            .logo span {
+                font-size: 20px;
+            }
+            .nav a {
+                font-size: 14px;
+                margin: 0 8px;
+            }
+            .hero-section h1 {
+                font-size: 32px;
+            }
+            .hero-section h1 img {
+                height: 40px;
+                margin-left: 10px;
+            }
+            .hero-section h2 {
+                font-size: 18px;
+            }
+            .hero-section p {
+                font-size: 14px;
+            }
+            .contact-header h2 {
+                font-size: 28px;
+            }
+            .info-box {
+                gap: 15px;
+            }
+            .info-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            footer {
+                padding: 40px 20px;
+            }
+            .footer-container {
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+        }
+
+        
     </style>
 </head>
 <body>
@@ -310,9 +593,9 @@
                     <span>BookHive</span>
                 </div>
                 <div class="nav">
-                    <a href="#">Home</a>
+                    <a href="home">Home</a>
                     <a href="#about">About</a>
-                    <a href="#">Contact</a>
+                    <a href="contact">Contact</a>
                 </div>
             </div>
 
@@ -362,6 +645,109 @@
                 BookHive simplifies library management by reducing manual record-keeping, improving accuracy, and ensuring a well-maintained inventory for every librarian.
             </p>
         </div>
+    </div>
+
+      <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2>Get in Touch</h2>
+                    <p>We'd love to hear from you! Whether you have questions about BookHive, suggestions for improvements, or need support, our team is here to help. Send us a message and we'll get back to you as soon as possible.</p>
+                </div>
+
+                <div class="contact-content">
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What is this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us more..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+
+                    <div class="contact-info">
+                        <div class="info-box">
+                            <div class="info-icon">📧</div>
+                            <div class="info-content">
+                                <h3>Email Us</h3>
+                                <p>bookhive@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-icon">📞</div>
+                            <div class="info-content">
+                                <h3>Call Us</h3>
+                                <p>09123456781</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-icon">📍</div>
+                            <div class="info-content">
+                                <h3>Visit Us</h3>
+                                <p>West Visayas State University</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-icon">🕐</div>
+                            <div class="info-content">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="bookhive logo.png" alt="BookHive Logo">
+                        <span>BookHive</span>
+                    </div>
+                    <p>Your Hive of Knowledge and Discovery. Managing libraries made simple and efficient.</p>
+                    <div class="social-links">
+                        <div class="social-icon">f</div>
+                        <div class="social-icon">𝕏</div>
+                        <div class="social-icon">in</div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about-us">About Us</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📧 bookhive@gmail.com</p>
+                    <p>📞 09123456781</p>
+                    <p>📍 West Visayas State University</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 BookHive. All rights reserved. | Designed with passion for libraries.</p>
+            </div>
+        </footer>
     </div>
 
     <script>
